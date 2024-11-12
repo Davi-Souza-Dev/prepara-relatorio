@@ -44,22 +44,31 @@ window.addEventListener("keydown",(evt)=>{
 
 
 const salvarDados=()=>{
-    const listaItem = [...document.querySelectorAll(".notaItem")];
-    let listText = [];
-    let data = new Date();
-    let dia = data.getDay();
-    let mes = data.getMonth();
-    let ano = data.getFullYear();
-    let msg = new String(`*Relatório: ${dia}/${mes}/${ano}*%0A`);
-    listaItem.map((item) => {
-      listText.push(item.innerText);
-    });
-    listText.map((txt) => {
-      msg = msg.concat(`- ${txt}%0A`);
-    });
-    listNota.innerHTML = " ";
-    let url = `https://api.whatsapp.com/send?phone=${5511976621573}&text=${msg}`;
-    window.open(url, "_blank");
+  const listaItem = [...document.querySelectorAll(".notaItem")];
+  console.log(listaItem)
+  if(listaItem.length > 0){
+      let listText = [];
+      let data = new Date();
+      let dia = data.getDay();
+      if(dia<10){
+          dia = `0${dia}`;
+      }
+      let mes = data.getMonth();
+      if(mes<10){
+          mes = `0${mes}`;
+      }
+      let ano = data.getFullYear();
+      let msg = new String(`*Relatório: ${dia}/${mes}/${ano}*%0A`);
+      listaItem.map((item) => {
+        listText.push(item.innerText);
+      });
+      listText.map((txt) => {
+        msg = msg.concat(`- ${txt}%0A`);
+      });
+      listNota.innerHTML = " ";
+      let url = `https://api.whatsapp.com/send?phone=${5511976621573}&text=${msg}`;
+      window.open(url, "_blank");
+  }  
 }
 
 const addNota=()=>{
