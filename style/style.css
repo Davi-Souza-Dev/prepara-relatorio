@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* border: 2px solid red; */
+}
+
+section h1 {
+  font-family: "Roboto";
+  font-size: 30px;
+}
+
+input{
+    width: 600px;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+    font-family: "Roboto", serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+section .container-nota{
+    width: fit-content;
+    height: fit-content;
+}
+
+section .container-btn{
+    width: fit-content;
+    height: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.plusButton {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength)
+    var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton > .plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.btnSalvar {
+  font-size: 1rem;
+  color: red;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid red;
+  background: #252525;
+  box-shadow: 3px 3px red;
+  cursor: pointer;
+  margin: 35px 0;
+}
+
+.btnSalvar:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+.listNota{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   gap: 10px; 
+}
+
+.listNota > li{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+li::before{
+    font-size: 1rem;    
+    content: "-";
+}
+
+li:hover .btnDel{
+    display: flex;
+}
+
+.btnDel{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    width: 50px;
+    height: 50px;
+}
+   
+   
+   

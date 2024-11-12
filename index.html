@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="shortcut icon"
+      href="imagens/logoPrepara.png"
+      type="image/x-icon"
+    />
+    <title>Prepara Relatorio</title>
+  </head>
+  <body>
+    <section>
+      <h1>Relatório Diário</h1>
+      <input type="text" id="txtNota" name="txtNota" />
+      <div class="container-btn">
+        <div tabindex="0" class="plusButton" id="btnAdd">
+          <svg
+            class="plusIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 30 30"
+          >
+            <g mask="url(#mask0_21_345)">
+              <path
+                d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <button class="btnSalvar" id="btnSalvar">Salvar</button>
+      </div>
+      <div class="container-nota">
+        <ul id="listNota" class="listNota">
+
+        </ul>
+      </div>
+    </section>
+    <script src="script/script.js"></script>
+  </body>
+</html>
